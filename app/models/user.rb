@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :lists, inverse_of: :owner
   has_many :gifts, inverse_of: :giver
+  has_many :lists, through: :participation
+
 end
