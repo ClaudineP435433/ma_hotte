@@ -67,8 +67,14 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+
+    devise_invitable (1.7.4)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
+
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -225,6 +231,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3)
   cloudinary
   devise
+  devise_invitable (~> 1.7.0)
   figaro
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
