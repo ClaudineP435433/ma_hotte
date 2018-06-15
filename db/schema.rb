@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_15_091750) do
 
+ActiveRecord::Schema.define(version: 2018_06_15_094730) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,6 +34,38 @@ ActiveRecord::Schema.define(version: 2018_06_15_091750) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "gifts", force: :cascade do |t|
+    t.bigint "list_id"
+    t.bigint "giver_id"
+    t.integer "status"
+    t.string "name"
+    t.text "description"
+    t.string "brand"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["giver_id"], name: "index_gifts_on_giver_id"
+    t.index ["list_id"], name: "index_gifts_on_list_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.integer "status"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_lists_on_owner_id"
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.bigint "list_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_participations_on_list_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,4 +99,7 @@ ActiveRecord::Schema.define(version: 2018_06_15_091750) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "gifts", "lists"
+  add_foreign_key "participations", "lists"
+  add_foreign_key "participations", "users"
 end
