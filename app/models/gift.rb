@@ -5,4 +5,5 @@ class Gift < ApplicationRecord
   has_many_attached :images
 
   enum status: {available: 0, booked: 1, bought: 2}
+  validates :name, presence: true
 end
