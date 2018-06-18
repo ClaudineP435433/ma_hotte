@@ -24,11 +24,11 @@ u6 = User.create!(first_name: "Estelle", last_name: "Galoa", email: "egaloa@gmai
 
 puts "Start List"
 
-l1 = List.create!(name:"Liste de Noël de Camomille", status: 0, owner: p1 )
-l2 = List.create!(name:"Liste de Noël de Patrick", status: 0, owner: p2 )
-l3 = List.create!(name:"Liste de Noël de Francine", status: 0, owner: p3 )
-l4 = List.create!(name:"Liste de Noël de Antoine", status: 0, owner: p4 )
-l5 = List.create!(name:"Liste de Noël de Monique", status: 1, owner: p5 )
+l1 = List.create!(name:"Liste de Noël de Camomille", status: 0, owner: u1 )
+l2 = List.create!(name:"Liste de Noël de Patrick", status: 0, owner: u2 )
+l3 = List.create!(name:"Liste de Noël de Francine", status: 0, owner: u3 )
+l4 = List.create!(name:"Liste de Noël de Antoine", status: 0, owner: u4 )
+l5 = List.create!(name:"Liste de Noël de Monique", status: 1, owner: u5 )
 
 puts "Start Participation"
 
