@@ -1,7 +1,7 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
   # Verifies that versions and hashed value of the package contents in the project's package.json
-config.webpacker.check_yarn_integrity = true
+  config.webpacker.check_yarn_integrity = true
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -14,7 +14,7 @@ config.webpacker.check_yarn_integrity = true
   config.eager_load = false
 
   # Store files locally.
-  config.active_storage.service = :local
+  config.active_storage.service = :cloudinary
 
   # Show full error reports.
   config.consider_all_requests_local = true
