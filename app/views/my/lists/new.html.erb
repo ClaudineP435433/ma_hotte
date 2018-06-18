@@ -1,5 +1,30 @@
-      <%= simple_form_for @list, url: my_lists_path do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :name, required: true, placeholder: "La liste de ...", label: false %>
-        <%= f.button :submit, class: "btn-success" %>
-      <% end %>
+<div class="wrapper">
+
+  <div class="wrapper-horizontal hidden-xs">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/mahotte/image/upload/v1529138299/woodgrain-with-christmas-ornaments_4460x4460.jpg');">
+      <div class="banner-content">
+        <h1>Mahotte.fr</h1>
+        <p class="text-right">Gardez la magie de noël</p>
+      </div>
+    </div>
+
+    <div class="container-fluid list_form">
+      <%= render "my/lists/form", list: @list, url: my_lists_path %>
+    </div>
+  </div>
+
+  <div class="hidden-sm hidden-md hidden-lg">
+    <div class="banner-xs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/mahotte/image/upload/v1529138299/woodgrain-with-christmas-ornaments_4460x4460.jpg');">
+      <div class="banner-content">
+        <h1>Mahotte.fr</h1>
+        <p class="text-right">Gardez la magie de noël</p>
+      </div>
+    </div>
+
+    <div class="list_form">
+      <%= render "my/lists/form", list: @list, url: my_lists_path %>
+    </div>
+  </div>
+
+
+</div>

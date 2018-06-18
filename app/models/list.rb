@@ -4,7 +4,10 @@ class List < ApplicationRecord
   enum status: {open: 0, closed: 1}
 
   has_many :users, through: :participation
-  has_many :gifts
+  has_many :gifts, dependent: :destroy, inverse_of: :list
+  accepts_nested_attributes_for :gifts,
+                                allow_destroy: true,
+                                reject_if: proc {|att| att['name'].blank? }
 
   validates :name, uniqueness: true
   validates :name, presence: true
