@@ -1,0 +1,5 @@
+      <%= simple_form_for @list, url: my_lists_path do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name, required: true, placeholder: "La liste de ...", label: false %>
+        <%= f.button :submit, class: "btn-success" %>
+      <% end %>

@@ -9,4 +9,7 @@ class List < ApplicationRecord
   validates :name, uniqueness: true
   validates :name, presence: true
 
+  def default_status
+    0
+  end
 end
