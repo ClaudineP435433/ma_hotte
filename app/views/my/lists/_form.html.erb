@@ -1,0 +1,17 @@
+
+<%= simple_form_for @list, url: my_lists_path do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name, required: true, placeholder: "La liste de ...", label: false %>
+
+  <h3>Cadeaux</h3>
+  <div id="gifts">
+    <%= f.simple_fields_for :gifts do |builder| %>
+       <%= render 'gift_fields', f: builder %>
+    <% end %>
+
+    <div class="links">
+      <%= link_to_add_association 'Ajouter un cadeau', f, :gifts, class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <%= f.submit 'Envoyer ma liste', class: "btn-success" %>
+<% end %>
