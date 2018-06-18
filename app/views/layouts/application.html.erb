@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title> <%= yield(:title) || "Mahotte.fr" %></title>
+    <meta name="description" content="<%=(yield(:description) || "").squish %>" >
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
@@ -17,3 +19,8 @@
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
+
+
+ <%# content_for(:title) do%><!--
+#   <%#= @restaurant.name %> est sur Mahotte.fr
+# <%# end %> -->
