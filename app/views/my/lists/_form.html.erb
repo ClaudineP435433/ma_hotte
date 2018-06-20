@@ -1,16 +1,13 @@
 
 <%= simple_form_for @list, url: my_lists_path do |f| %>
   <%= f.error_notification %>
-  <%= f.input :name, required: true, placeholder: "La liste de ... ", label: false %>
 
-
-    <%= f.simple_fields_for :gifts, @gift do |b| %>
-      <%= render 'gift_fields', f: b %>
-    <% end %>
+  <h4>Ma liste de Nöel</h4>
+  <p>Cher Père Nöel, ayant été trés sage cette année, je voudrais ...</p>
 
 
   <div id="gifts">
-    <%= f.simple_fields_for :gifts do |builder| %>
+    <%= f.simple_fields_for :gifts, @gift do |builder| %>
        <%= render 'gift_fields', f: builder %>
     <% end %>
 

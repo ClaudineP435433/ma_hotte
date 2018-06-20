@@ -18,4 +18,8 @@ class List < ApplicationRecord
     0
   end
 
+  def default_name
+    "Ma Liste de Nöel" if name.nil?
+  end
+
 end

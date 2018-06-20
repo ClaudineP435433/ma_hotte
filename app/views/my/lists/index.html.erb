@@ -1,0 +1,13 @@
+<h1>Ma Hotte </h1>
+
+<ul>
+<% @lists.each do |list| %>
+  <li>
+    <%= list.name %>
+    <%= link_to my_list_path(list) do %>
+      <i class="fa fa-user"></i>
+    <% end %>
+  </li>
+<% end %>
+
+</ul>
