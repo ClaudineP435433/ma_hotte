@@ -1,0 +1,10 @@
+<h1>Mes achats de Noël</h1>
+
+<ul>
+<% @gifts.each do |gift| %>
+  <li>
+    <%= "#{gift.name} pour #{gift.list.owner.full_name}" %>
+  </li>
+
+<% end %>
+</ul>

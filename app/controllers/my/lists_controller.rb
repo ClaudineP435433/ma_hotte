@@ -1,6 +1,14 @@
 class My::ListsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new]
 
+  def index
+    @lists = List.where(owner: current_user)
+  end
+
+  def show
+    @list = List.find(params[:id])
+  end
+
   def new
     @list = List.new
     @gift = Gift.new
@@ -10,6 +18,7 @@ class My::ListsController < ApplicationController
     @list = List.new(list_params)
     @list.owner = current_user
     @list.default_status
+    @list.default_name
 
     if @list.save
       redirect_to my_list_participation(@list)

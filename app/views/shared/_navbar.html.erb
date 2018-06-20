@@ -10,9 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Ma Hotte", my_list_path(List.find_by(owner: current_user)), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Ma Hotte", my_lists_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Ma Communauté", my_community_lists_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Mes Achats de Noël", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Mes Achats de Noël", gifts_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
