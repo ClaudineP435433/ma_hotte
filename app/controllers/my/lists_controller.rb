@@ -3,6 +3,7 @@ class My::ListsController < ApplicationController
 
   def new
     @list = List.new
+    @gift = Gift.new
   end
 
   def create

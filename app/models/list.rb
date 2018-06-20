@@ -3,8 +3,10 @@ class List < ApplicationRecord
 
   enum status: {open: 0, closed: 1}
 
-  has_many :users, through: :participation
+  has_many :users, through: :participations
   has_many :gifts, dependent: :destroy, inverse_of: :list
+  has_many :participations
+
   accepts_nested_attributes_for :gifts,
                                 allow_destroy: true,
                                 reject_if: proc {|att| att['name'].blank? }
@@ -15,4 +17,5 @@ class List < ApplicationRecord
   def default_status
     0
   end
+
 end

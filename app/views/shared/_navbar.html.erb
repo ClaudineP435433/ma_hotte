@@ -10,36 +10,40 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Ma Hotte", my_list_path(List.find_by(owner: current_user)), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Ma Communauté", my_community_lists_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Mes Achats de Noël", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
+
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Mon Profil") %>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <i class="fas fa-book"></i> Mode d'emploi
               <% end %>
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Me Déconnecter") %>
               <% end %>
             </li>
           </ul>
         </div>
+
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Mode d'emploi", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Me Connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Créer un Compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
@@ -48,9 +52,31 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Ma Hotte", "#" %></li>
+          <li>
+            <%= link_to "#" do %>
+                </i> Ma Communauté
+              <% end %>
+          </li>
+          <li>
+            <%= link_to "Mes achats de Nöel", "#"%></li>
+          <li>
+            <%= link_to "#" do %>
+              <%= t(".profile", default: "Mon Profil") %>
+            <% end %>
+          </li>
+          <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <%= t(".sign_out", default: "Me Déconnecter") %>
+              <% end %>
+          </li>
+        <% else %>
+            <!-- Login link (when logged out) -->
+          <li><%= link_to "Mode d'emploi", "#" %></li>
+          <li><%= link_to t(".sign_in", default: "Me Connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to t(".sign_in", default: "Créer un Compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <% end %>
       </ul>
     </div>
   </div>
