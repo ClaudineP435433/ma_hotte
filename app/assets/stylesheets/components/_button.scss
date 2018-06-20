@@ -1,0 +1,13 @@
+.big-btn, .small-btn {
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 4px 4px 4px -1px rgba(21,127,116,0.5);
+    color: #74C7BE;
+    padding: 25px 40px;
+    font-size: 25px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-decoration: none;
+}
