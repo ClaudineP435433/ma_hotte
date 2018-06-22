@@ -1,4 +1,4 @@
-class My::ListsController < ApplicationController
+class ListsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new]
 
   def index
@@ -21,10 +21,10 @@ class My::ListsController < ApplicationController
     @list.default_name
 
     if @list.save
-      redirect_to my_list_participation(@list)
+      redirect_to list_participation(@list)
       flash[:notice] = "Votre liste a été créé avec succés"
     else
-      render 'my/lists#new'
+      render 'lists#new'
     end
   end
 

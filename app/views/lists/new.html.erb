@@ -4,7 +4,7 @@
     <%= render "shared/banner" %>
 
     <div class="container-fluid list_form">
-      <%= render "my/lists/form", list: @list, url: my_lists_path %>
+      <%= render "lists/form", list: @list, url: lists_path %>
     </div>
   </div>
 
@@ -19,7 +19,7 @@
     <div class="list_form">
 
       <div class="form-new">
-        <%= render "my/lists/form", list: @list, url: my_lists_path %>
+        <%= render "lists/form", list: @list, url: lists_path %>
       </div>
 
     </div>

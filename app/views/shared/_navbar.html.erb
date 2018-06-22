@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Ma Hotte", my_lists_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Ma Communauté", my_community_lists_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Ma Hotte", lists_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Ma Communauté", participants_lists_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Mes Achats de Noël", gifts_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->

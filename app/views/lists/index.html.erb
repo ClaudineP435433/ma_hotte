@@ -4,7 +4,7 @@
 <% @lists.each do |list| %>
   <li>
     <%= list.name %>
-    <%= link_to my_list_path(list) do %>
+    <%= link_to list_path(list) do %>
       <i class="fa fa-user"></i>
     <% end %>
   </li>
