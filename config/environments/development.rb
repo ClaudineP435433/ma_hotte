@@ -14,7 +14,7 @@ Rails.application.configure do
   config.eager_load = false
 
   # Store files locally.
-  config.active_storage.service = :cloudinary
+  config.active_storage.service = :local
 
   # Show full error reports.
   config.consider_all_requests_local = true
