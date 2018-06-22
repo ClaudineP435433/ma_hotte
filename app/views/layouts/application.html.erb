@@ -18,7 +18,9 @@
 
     <div class="wrapper-horizontal hidden-xs">
       <%= render "shared/banner" %>
-      <%= yield %>
+      <div class="container-fluid list_form">
+        <%= yield %>
+      </div>
     </div>
 
     <div class="hidden-sm hidden-md hidden-lg">
@@ -28,8 +30,9 @@
           <p class="text-right">Gardez la magie de noël</p>
         </div>
       </div>
-
-      <%= yield %>
+      <div class="container-fluid list_form">
+        <%= yield %>
+      </div>
     </div>
 
 
