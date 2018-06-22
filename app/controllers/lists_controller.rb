@@ -17,14 +17,15 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.owner = current_user
-    @list.default_status
-    @list.default_name
+    @list.status = 0
+    @list.name = "Ma Liste de Nöel #{current_user.owner_lists.size}"
 
     if @list.save
-      redirect_to list_participation(@list)
+
+      redirect_to new_list_participation_path(@list)
       flash[:notice] = "Votre liste a été créé avec succés"
     else
-      render 'lists#new'
+      render 'lists/new'
     end
   end
 
@@ -38,7 +39,7 @@ class ListsController < ApplicationController
       flash[:notice] = 'Votre Liste de Noël a bien été mise à jour'
       redirect_to lists_path
     else
-      render 'list#edit'
+      render 'lists/edit'
     end
   end
 

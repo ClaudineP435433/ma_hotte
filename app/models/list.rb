@@ -15,11 +15,11 @@ class List < ApplicationRecord
   validates :name, presence: true
 
   def default_status
-    0
+    0 if status.nil?
   end
 
   def default_name
-    "Ma Liste de Nöel" if name.nil?
+    "Ma Liste de Nöel #{current_user.owner_lists.size}" if name.nil?
   end
 
 end
