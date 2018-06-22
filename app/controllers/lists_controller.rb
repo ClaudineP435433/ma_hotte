@@ -1,4 +1,4 @@
-class My::ListsController < ApplicationController
+class ListsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new]
 
   def index
@@ -17,14 +17,29 @@ class My::ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.owner = current_user
-    @list.default_status
-    @list.default_name
+    @list.status = 0
+    @list.name = "Ma Liste de Nöel #{current_user.owner_lists.size}"
 
     if @list.save
-      redirect_to my_list_participation(@list)
+
+      redirect_to new_list_participation_path(@list)
       flash[:notice] = "Votre liste a été créé avec succés"
     else
-      render 'my/lists#new'
+      render 'lists/new'
+    end
+  end
+
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def update
+    @list = List.find(params[:id])
+    if @list.update(lists_params)
+      flash[:notice] = 'Votre Liste de Noël a bien été mise à jour'
+      redirect_to lists_path
+    else
+      render 'lists/edit'
     end
   end
 

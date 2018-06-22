@@ -1,0 +1,12 @@
+<h1><%= "Liste de Nöel de #{@list.owner.full_name}" %></h1>
+
+<ul>
+ <% @list.gifts.each do |gift| %>
+  <li>
+    <%= "#{gift.name}" %>
+    <%= gift.brand %>
+    <%= gift.description %>
+
+  </li>
+ <% end %>
+</ul>

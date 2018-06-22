@@ -1,4 +1,4 @@
-class MyCommunity::ListsController < ApplicationController
+class Participants::ListsController < ApplicationController
 
 
   def index

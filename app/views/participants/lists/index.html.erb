@@ -4,7 +4,7 @@
  <% @lists.each do |list| %>
   <li>
     <%= "#{list.owner.full_name}" %>
-    <%= link_to my_community_list_path(list) do %>
+    <%= link_to participants_list_path(list) do %>
       <i class="fa fa-user"></i>
     <% end %>
   </li>
