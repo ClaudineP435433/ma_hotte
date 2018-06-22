@@ -28,6 +28,20 @@ class ListsController < ApplicationController
     end
   end
 
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def update
+    @list = List.find(params[:id])
+    if @list.update(lists_params)
+      flash[:notice] = 'Votre Liste de Noël a bien été mise à jour'
+      redirect_to lists_path
+    else
+      render 'list#edit'
+    end
+  end
+
   private
 
   def list_params
