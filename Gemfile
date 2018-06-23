@@ -22,7 +22,8 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem 'cocoon'
-gem 'cloudinary'
+gem 'cloudinary', require: false
+gem 'activestorage-cloudinary-service'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
