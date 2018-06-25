@@ -19,7 +19,7 @@ class ListsController < ApplicationController
     @list.owner = current_user
     @list.status = 0
     @list.name = "Ma Liste de Nöel #{current_user.owner_lists.size}"
-
+    raise
     if @list.save
 
       redirect_to new_list_participation_path(@list)
@@ -49,7 +49,7 @@ class ListsController < ApplicationController
     params
       .require(:list)
       .permit(:name,:owner_id,
-        gifts_attributes: [:id, :_destroy, :name, :description, :brand, :link])
+        gifts_attributes: [:id, :_destroy, :name, :description, :brand, :link, images: []])
   end
 
 end

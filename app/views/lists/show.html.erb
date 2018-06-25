@@ -6,6 +6,9 @@
     <%= gift.name %>
     <%= gift.brand unless gift.brand.present? %>
     <%= gift.description %>
+    <% gift.images.each do |image| %>
+      <%= image_tag image %> <br />
+    <% end %>
   </li>
 <% end %>
 </ul>

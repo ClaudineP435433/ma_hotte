@@ -1,7 +1,8 @@
 <div class="nested-fields">
-    <%= f.input :name, placeholder: "Appareil photo", label: false %>
-    <%= f.input :description, placeholder: "Noir, Un réflexe,...", label: false %>
-    <%= f.input :brand, placeholder: "Lumix",label: false %>
-    <%= f.input :link, placeholder: "https://www.fnac.com/Reflex-Canon-EOS-100D-Obj-Canon-EF-S-IS-STM-18-55-mm-f-3-5-5-6/a5782281/w-4",label: false %>
+    <%= f.input :name, placeholder: "Un Cadeau dans ma hotte", label: false %>
+    <%= f.input :description, placeholder: "Quelques détails sur le cadeau", label: false %>
+    <%= f.input :brand, placeholder: "Une marque spécifique ?",label: false %>
+    <%= f.input :link, placeholder: "Lien internet... https://www.fnac.com....",label: false %>
+    <%= f.file_field :images, multiple: true, placeholder: "Une image pour être sûr ",label: false, accept: 'images/png,images/gif,images/jpeg' %>
     <%= link_to_remove_association "Supprimer un Cadeau", f, class: 'btn btn-primary btn-xs' %>
 </div>

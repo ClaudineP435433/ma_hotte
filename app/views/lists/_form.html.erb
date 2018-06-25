@@ -5,7 +5,6 @@
   <h4>Ma liste de Nöel</h4>
   <p>Cher Père Nöel, ayant été trés sage cette année, je voudrais ...</p>
 
-
   <div id="gifts">
     <%= f.simple_fields_for :gifts, @gift do |builder| %>
        <%= render 'gift_fields', f: builder %>
