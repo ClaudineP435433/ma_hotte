@@ -19,7 +19,7 @@ class List < ApplicationRecord
   end
 
   def default_name
-    "Ma Liste de Nöel #{current_user.owner_lists.size}" if name.nil?
+    "Ma Liste de Nöel" if name.nil?
   end
 
 end
