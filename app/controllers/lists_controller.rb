@@ -19,7 +19,6 @@ class ListsController < ApplicationController
     @list.owner = current_user
     @list.status = 0
     @list.name = "Ma Liste de Nöel #{current_user.owner_lists.size}"
-    raise
     if @list.save
 
       redirect_to new_list_participation_path(@list)
