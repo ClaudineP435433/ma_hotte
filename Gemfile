@@ -22,6 +22,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'sendgrid-ruby'
 
 gem 'cocoon'
 gem 'cloudinary', require: false
